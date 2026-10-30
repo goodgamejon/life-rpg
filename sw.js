@@ -1,9 +1,8 @@
 // SKILL ISSUE service worker: keeps a copy of the app so the installed version opens offline.
 // Not bundled. vite.config.ts fills in the build id and file list and writes it to dist/sw.js.
-const BUILD = 'ec5eba36ee6b';
-const FILES = ["assets/index-BNOeoF7N.js","assets/index-C6R0qwGx.css","favicon.svg","icons/apple-touch-icon.png","icons/icon-192.png","icons/icon-512.png","icons/icon-maskable-192.png","icons/icon-maskable-512.png","index.html","manifest.webmanifest"];
+const BUILD = '51d8750650ac';
+const FILES = ["assets/index--OIfEnum.css","assets/index-BedC4nIa.js","assets/lilita-one-latin-87r-Z-Re.woff2","assets/lilita-one-latin-ext-DxX3B4s6.woff2","assets/nunito-latin-BzFMHfZw.woff2","assets/nunito-latin-ext-CXYtwYOx.woff2","favicon.svg","icons/apple-touch-icon.png","icons/icon-192.png","icons/icon-512.png","icons/icon-maskable-192.png","icons/icon-maskable-512.png","index.html","manifest.webmanifest"];
 const CACHE = `life-rpg-${BUILD}`;
-const FONTS = 'life-rpg-fonts';
 
 self.addEventListener('install', (event) => {
   event.waitUntil(
@@ -18,7 +17,8 @@ self.addEventListener('activate', (event) => {
   event.waitUntil(
     caches
       .keys()
-      .then((keys) => Promise.all(keys.filter((key) => key !== CACHE && key !== FONTS).map((key) => caches.delete(key))))
+      // Every older copy goes, including the Google Fonts one earlier versions kept (the fonts are part of the app now).
+      .then((keys) => Promise.all(keys.filter((key) => key !== CACHE).map((key) => caches.delete(key))))
       .then(() => self.clients.claim()),
   );
 });
@@ -28,16 +28,7 @@ self.addEventListener('fetch', (event) => {
   if (request.method !== 'GET') return;
   const url = new URL(request.url);
 
-  // Google Fonts: serve the saved copy, refresh it in the background.
-  if (url.hostname === 'fonts.googleapis.com' || url.hostname === 'fonts.gstatic.com') {
-    const refresh = fetch(request).then(async (response) => {
-      if (response.ok || response.type === 'opaque') await (await caches.open(FONTS)).put(request, response.clone());
-      return response;
-    });
-    event.waitUntil(refresh.catch(() => undefined));
-    event.respondWith(caches.match(request).then((hit) => hit ?? refresh));
-    return;
-  }
+  // The app makes no request to any other site, so anything from elsewhere is left alone.
   if (url.origin !== self.location.origin) return;
 
   // Pages: network first so a new publish shows up right away; the saved page when offline.
