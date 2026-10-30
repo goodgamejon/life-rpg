@@ -1,7 +1,7 @@
 // SKILL ISSUE service worker: keeps a copy of the app so the installed version opens offline.
 // Not bundled. vite.config.ts fills in the build id and file list and writes it to dist/sw.js.
-const BUILD = '12c4fe880d64';
-const FILES = ["assets/index-B1XT0z-N.css","assets/index-C7YwjEon.js","favicon.svg","icons/apple-touch-icon.png","icons/icon-192.png","icons/icon-512.png","icons/icon-maskable-192.png","icons/icon-maskable-512.png","index.html","manifest.webmanifest"];
+const BUILD = 'ec5eba36ee6b';
+const FILES = ["assets/index-BNOeoF7N.js","assets/index-C6R0qwGx.css","favicon.svg","icons/apple-touch-icon.png","icons/icon-192.png","icons/icon-512.png","icons/icon-maskable-192.png","icons/icon-maskable-512.png","index.html","manifest.webmanifest"];
 const CACHE = `life-rpg-${BUILD}`;
 const FONTS = 'life-rpg-fonts';
 
