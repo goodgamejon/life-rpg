@@ -1,7 +1,7 @@
 // SKILL ISSUE service worker: keeps a copy of the app so the installed version opens offline.
 // Not bundled. vite.config.ts fills in the build id and file list and writes it to dist/sw.js.
-const BUILD = '8cfaf5ebf1a9';
-const FILES = ["assets/index-BiOC7CBu.css","assets/index-CWB8vemX.js","assets/lilita-one-latin-87r-Z-Re.woff2","assets/lilita-one-latin-ext-DxX3B4s6.woff2","assets/nunito-latin-BzFMHfZw.woff2","assets/nunito-latin-ext-CXYtwYOx.woff2","favicon.svg","icons/apple-touch-icon.png","icons/icon-192.png","icons/icon-512.png","icons/icon-maskable-192.png","icons/icon-maskable-512.png","index.html","licenses/OFL-Lilita-One.txt","licenses/OFL-Nunito.txt","manifest.webmanifest"];
+const BUILD = '6a182f60ee0f';
+const FILES = ["assets/CharacterView-KElgj-CD.js","assets/ChronicleView-C_2bgdjh.js","assets/Companion-CMfTWDnN.js","assets/ComposerView-By7pxCX5.js","assets/CourseCta-8LFrE_yD.js","assets/JourneyView-BZB0-Jkq.js","assets/MicTest-C_fXT0k-.js","assets/QuestsView-Da--SI1a.js","assets/ReviewView-De9jaBo5.js","assets/SettingsView-CSSb0KgY.js","assets/SkillsView-D2KcSNb7.js","assets/TipsCard-D9tISYcc.js","assets/harsh-en-B33KvNh2.js","assets/harsh-pt-DRpRQSUn.js","assets/harsh-zh-B5J1opY0.js","assets/index-9BO1TPKc.css","assets/index-ZndWrROP.js","assets/lilita-one-latin-87r-Z-Re.woff2","assets/lilita-one-latin-ext-DxX3B4s6.woff2","assets/nunito-latin-BzFMHfZw.woff2","assets/nunito-latin-ext-CXYtwYOx.woff2","assets/reading-BrXKNXLv.js","assets/text-en-Dj_PRnSo.js","assets/text-pt-QFFPvenq.js","assets/text-zh-Bb7ZncHK.js","favicon.svg","icons/apple-touch-icon.png","icons/icon-192.png","icons/icon-512.png","icons/icon-maskable-192.png","icons/icon-maskable-512.png","index.html","licenses/OFL-Lilita-One.txt","licenses/OFL-Nunito.txt","manifest.webmanifest"];
 const CACHE = `life-rpg-${BUILD}`;
 
 self.addEventListener('install', (event) => {
