@@ -1,7 +1,7 @@
 // SKILL ISSUE service worker: keeps a copy of the app so the installed version opens offline.
 // Not bundled. vite.config.ts fills in the build id and file list and writes it to dist/sw.js.
-const BUILD = 'a6868940d4fb';
-const FILES = ["assets/index-DstLA8Jd.js","assets/index-g_N6HDNb.css","assets/lilita-one-latin-87r-Z-Re.woff2","assets/lilita-one-latin-ext-DxX3B4s6.woff2","assets/nunito-latin-BzFMHfZw.woff2","assets/nunito-latin-ext-CXYtwYOx.woff2","favicon.svg","icons/apple-touch-icon.png","icons/icon-192.png","icons/icon-512.png","icons/icon-maskable-192.png","icons/icon-maskable-512.png","index.html","licenses/OFL-Lilita-One.txt","licenses/OFL-Nunito.txt","manifest.webmanifest"];
+const BUILD = 'dbffec1e2f6d';
+const FILES = ["assets/index-DM4Ul0wc.js","assets/index-DRznoofp.css","assets/lilita-one-latin-87r-Z-Re.woff2","assets/lilita-one-latin-ext-DxX3B4s6.woff2","assets/nunito-latin-BzFMHfZw.woff2","assets/nunito-latin-ext-CXYtwYOx.woff2","favicon.svg","icons/apple-touch-icon.png","icons/icon-192.png","icons/icon-512.png","icons/icon-maskable-192.png","icons/icon-maskable-512.png","index.html","licenses/OFL-Lilita-One.txt","licenses/OFL-Nunito.txt","manifest.webmanifest"];
 const CACHE = `life-rpg-${BUILD}`;
 
 self.addEventListener('install', (event) => {
