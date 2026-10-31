@@ -1,0 +1,1 @@
+import{u as a,j as s}from"./index-Cl9bLaqM.js";function l(){const{t}=a(),e=t.course;return s.jsxs("aside",{className:"plate course-cta flex flex-col gap-2 p-4",children:[s.jsx("p",{className:"font-display text-xl",children:e.title}),s.jsx("p",{className:"text-sm",children:e.body}),s.jsx("p",{className:"text-sm text-mist",children:e.soon})]})}export{l as C};
